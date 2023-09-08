@@ -16,7 +16,7 @@ module DeleteRecursively::AssociatedClassFinder
 
     def find_classes(reflection)
       result =
-        if (reflection.polymorphic?) rescue nil
+        if (reflection.polymorphic? rescue nil) 
           find_classes_for_polymorphic_reflection(reflection)
         else
           [reflection.klass]
